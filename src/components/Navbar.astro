@@ -5,9 +5,10 @@ import logo from "../assets/tbc-logo-100x100.png";
 
 <!-- navbar goes here -->
 <nav class="bg-[#371B07]">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between space-x-4">
-      <div class="py-4 px-3">
+  <div class="site-container">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="py-4">
         <a href="#">
           <Image
             src={logo}
@@ -18,49 +19,73 @@ import logo from "../assets/tbc-logo-100x100.png";
           /></a
         >
       </div>
-      <!-- primary nav -->
+      <!-- Navigation Items -->
       <ul class="hidden md:flex items-center space-x-4 text-white">
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Features</a>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Home</a>
         </li>
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Pricing</a>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Store</a>
+        </li>
+        <li>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Contact</a>
+        </li>
+        <li>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Blog</a>
         </li>
       </ul>
-    </div>
 
-    <!-- mobile button goes here -->
-    <div class="md:hidden flex items-center">
-      <button class="mobile-menu-button cursor-pointer">
-        <img
-          class="w-6 h-6 hamburger-icon transition-all duration-300 ease-in-out transform hover:scale-110"
-          src="src/assets/icon-hamburger-light.svg"
-          alt=""
-        />
-        <img
-          class="w-6 h-6 close-icon hidden transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-90"
-          src="src/assets/icon-close-light.svg"
-          alt="Close"
-        />
-      </button>
+      <!-- mobile button goes here -->
+      <div class="md:hidden flex items-center">
+        <button class="mobile-menu-button cursor-pointer">
+          <img
+            class="w-6 h-6 hamburger-icon transition-all duration-300 ease-in-out transform hover:scale-110"
+            src="src/assets/icon-hamburger-light.svg"
+            alt=""
+          />
+          <img
+            class="w-6 h-6 close-icon hidden transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-90"
+            src="src/assets/icon-close-light.svg"
+            alt="Close"
+          />
+        </button>
+      </div>
     </div>
   </div>
 
   <!-- mobile menu -->
-  <div
-    class="mobile-menu hidden md:hidden px-3 transform transition-all duration-500 ease-out scale-95 opacity-0"
+  <ul
+    class="mobile-menu hidden md:hidden px-3 transform transition-all duration-500 ease-out scale-95 opacity-0 text-white"
   >
-    <a
-      href=""
-      class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
-      >Features</a
-    >
-    <a
-      href=""
-      class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
-      >Pricing</a
-    >
-  </div>
+    <li>
+      <a
+        href=""
+        class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href=""
+        class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
+        >Store</a
+      >
+    </li>
+    <li>
+      <a
+        href=""
+        class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
+        >Contact</a
+      >
+    </li>
+    <li>
+      <a
+        href=""
+        class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
+        >Blog</a
+      >
+    </li>
+  </ul>
 </nav>
 
 <script>
