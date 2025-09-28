@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+/* gloock-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Gloock';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/gloock-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* bitter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/bitter-v39-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* bitter-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/bitter-v39-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* bitter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/bitter-v39-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@layer utilities {
+  .bg-coffee-primary {
+    background-color: #371B07;
+  }
+}
+
+body {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Gloock', sans-serif;
+    }
+    p, a, li, span, div {
+      font-family: 'Bitter', sans-serif;
+    }
+  }
+
+.site-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    align-items: center;
+  }

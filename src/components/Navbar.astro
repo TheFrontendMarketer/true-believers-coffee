@@ -1,45 +1,48 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/tbc-logo-100x100.png";
+---
+
 <!-- navbar goes here -->
-<nav class="bg-gray-100">
+<nav class="bg-[#371B07]">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between items-center">
-      <div class="flex space-x-4 items-center">
-        <div class="py-5 px-3">
-          <a href="#">Digital Ocean (my version1)</a>
-        </div>
-        <!-- primary nav -->
-        <div class="hidden md:flex items-center space-x-4">
-          <a class="py-5 px-3 text-gray-700 hover:text-orange-400" href=""
-            >Features</a
-          >
-          <a class="py-5 px-3 text-gray-700 hover:text-orange-400" href=""
-            >Pricing</a
-          >
-        </div>
-      </div>
-      <!-- secondary nav -->
-      <div class="hidden md:flex items-center space-x-1">
-        <a href="" class="py-5 px-3 text-gray-700">Login</a>
-        <a
-          href=""
-          class="py-2 px-3 bg-orange-400 hover:bg-orange-300 text-white hover:text-black rounded transition duration-300"
-          >Signup</a
+    <div class="flex justify-between space-x-4">
+      <div class="py-4 px-3">
+        <a href="#">
+          <Image
+            src={logo}
+            alt="True Believers Coffee Logo"
+            width={100}
+            height={100}
+            class="image-sharp"
+          /></a
         >
       </div>
-      <!-- mobile button goes here -->
-      <div class="md:hidden flex items-center">
-        <button class="mobile-menu-button cursor-pointer">
-          <img
-            class="w-6 h-6 hamburger-icon transition-all duration-300 ease-in-out transform hover:scale-110"
-            src="src/assets/icon-hamburger-light.svg"
-            alt=""
-          />
-          <img
-            class="w-6 h-6 close-icon hidden transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-90"
-            src="src/assets/icon-close-light.svg"
-            alt="Close"
-          />
-        </button>
-      </div>
+      <!-- primary nav -->
+      <ul class="hidden md:flex items-center space-x-4 text-white">
+        <li>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Features</a>
+        </li>
+        <li>
+          <a class="py-5 px-3 hover:text-orange-400" href="">Pricing</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- mobile button goes here -->
+    <div class="md:hidden flex items-center">
+      <button class="mobile-menu-button cursor-pointer">
+        <img
+          class="w-6 h-6 hamburger-icon transition-all duration-300 ease-in-out transform hover:scale-110"
+          src="src/assets/icon-hamburger-light.svg"
+          alt=""
+        />
+        <img
+          class="w-6 h-6 close-icon hidden transition-all duration-300 ease-in-out transform hover:scale-110 hover:rotate-90"
+          src="src/assets/icon-close-light.svg"
+          alt="Close"
+        />
+      </button>
     </div>
   </div>
 
@@ -91,3 +94,11 @@
     });
   }
 </script>
+
+<style>
+  .image-sharp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
+</style>
