@@ -9,7 +9,7 @@ import logo from "../assets/tbc-logo-100x100.png";
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="py-4">
-        <a href="#">
+        <a href="/">
           <Image
             src={logo}
             alt="True Believers Coffee Logo"
@@ -22,18 +22,54 @@ import logo from "../assets/tbc-logo-100x100.png";
       <!-- Navigation Items -->
       <ul class="hidden md:flex items-center space-x-4 text-white">
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Home</a>
+          <a
+            class="relative py-5 px-3 hover:text-orange-400
+             after:content-[''] after:absolute after:left-0 after:-bottom-[-8px]
+             after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300
+             hover:after:w-full"
+            href="/store">Store</a
+          >
         </li>
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Store</a>
+          <a
+            class="relative py-5 px-3 hover:text-orange-400
+             after:content-[''] after:absolute after:left-0 after:-bottom-[-8px]
+             after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300
+             hover:after:w-full"
+            href="/contact">Contact</a
+          >
         </li>
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Contact</a>
+          <a
+            class="relative py-5 px-3 hover:text-orange-400
+             after:content-[''] after:absolute after:left-0 after:-bottom-[-8px]
+             after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300
+             hover:after:w-full"
+            href="/about">About</a
+          >
         </li>
         <li>
-          <a class="py-5 px-3 hover:text-orange-400" href="">Blog</a>
+          <a
+            class="relative py-5 px-3 hover:text-orange-400
+             after:content-[''] after:absolute after:left-0 after:-bottom-[-8px]
+             after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300
+             hover:after:w-full"
+            href="/blog">Blog</a
+          >
         </li>
       </ul>
+      <div>
+        <div class="cart-items cart-items__desktop" id="cartCountDesktop">
+          0
+        </div>
+        <a class="relative py-5 px-3 hover:text-orange-400" href="/blog"
+          ><img
+            src="/images/store/shopping-cart-light-100x100.svg"
+            alt="Shopping cart"
+            class="w-8 h-8 cursor-pointer"
+          /></a
+        >
+      </div>
 
       <!-- mobile button goes here -->
       <div class="md:hidden flex items-center">
@@ -62,28 +98,35 @@ import logo from "../assets/tbc-logo-100x100.png";
   >
     <li>
       <a
-        href=""
+        href="/"
         class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
         >Home</a
       >
     </li>
     <li>
       <a
-        href=""
+        href="/store"
         class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
         >Store</a
       >
     </li>
     <li>
       <a
-        href=""
+        href="/contact"
         class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
         >Contact</a
       >
     </li>
     <li>
       <a
-        href=""
+        href="/about"
+        class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
+        >About</a
+      >
+    </li>
+    <li>
+      <a
+        href="/blog"
         class="block py-2 px-3 text-sm hover:bg-gray-200 transition-all duration-200 hover:translate-x-2"
         >Blog</a
       >

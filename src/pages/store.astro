@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// imports (from src/assets, not /public)
+import card1 from "../../public/images/store/card1.png";
+import card2 from "../../public/images/store/card2.png";
+import card3 from "../../public/images/store/card3.png";
+import card4 from "../../public/images/store/card4.png";
+import card5 from "../../public/images/store/card5.png";
+import card6 from "../../public/images/store/card6.png";
+
+const products = [
+  {
+    id: 1,
+    href: "/product-page/traditional-blend.html",
+    img: card1,
+    alt: "Traditional Blend bag",
+    title: "True Believers Coffee Traditional Blend",
+    price: "$14.00 10oz",
+  },
+  {
+    id: 2,
+    href: "/product-page/summer-blend.html",
+    img: card2,
+    alt: "Summer Blend bag",
+    title: "True Believers Coffee Summer Blend",
+    price: "$14.00 10oz",
+  },
+  {
+    id: 3,
+    href: "/product-page/holiday-blend.html",
+    img: card3,
+    alt: "Holiday Blend bag",
+    title: "True Believers Coffee Holiday Blend",
+    price: "$14.00 10oz",
+  },
+  {
+    id: 4,
+    href: "/product-page/dark-roast-blend.html",
+    img: card4,
+    alt: "Dark Roast bag",
+    title: "True Believers Coffee Dark Roast Blend",
+    price: "$14.00 10oz",
+  },
+  {
+    id: 5,
+    href: "/product-page/reserve-blend.html",
+    img: card5,
+    alt: "Reserve Blend bag",
+    title: "True Believers Coffee Reserve Blend",
+    price: "$14.00 10oz",
+  },
+  {
+    id: 6,
+    href: "/product-page/morning-blend.html",
+    img: card6,
+    alt: "Morning Blend bag",
+    title: "True Believers Coffee Morning Blend",
+    price: "$14.00 10oz",
+  },
+];
+---
+
+<Layout title="TBC Store" description="True Believers Coffee Store">
+  <main>
+    <!-- your hero stays as-is -->
+
+    <section class="bg-white pb-16">
+      <div class="site-container">
+        <div>
+          <h1 class="text-4xl leading-[110%] pt-16 pb-5 text-center">
+            True Believers Coffee Store
+          </h1>
+          <p class="pb-16 text-center">TBC members get FREE delivery!</p>
+        </div>
+
+        <!-- Product grid -->
+        <div
+          class="grid gap-6 mb-32 md:[grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))]"
+        >
+          {
+            products.map((p) => (
+              <div class="shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                <a href={p.href} class="block">
+                  <Image
+                    src={p.img}
+                    alt={p.alt}
+                    class="w-full h-auto"
+                    widths={[320, 480, 640, 768, 960]}
+                    format="webp"
+                    quality={78}
+                    sizes="(min-width: 1024px) 20vw, (min-width: 768px) 30vw, 90vw"
+                  />
+                </a>
+                <div class="p-2">
+                  <a href={p.href} class="no-underline text-black">
+                    <p class="text-[1.1rem] font-bold text-black">{p.title}</p>
+                    <p class="text-[1.2rem]">{p.price}</p>
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

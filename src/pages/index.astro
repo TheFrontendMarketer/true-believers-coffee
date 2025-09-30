@@ -18,10 +18,9 @@ import teamMemberThree from "../assets/480x600_sara.jpg";
 import teamMemberFour from "../assets/480x600_tom.jpg";
 import teamMemberFive from "../assets/480x600_emily.jpg";
 import teamMemberSix from "../assets/480x600_james2.jpg";
-import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
+<Layout title="True Believers Coffee" description="True Believers Coffee">
   <main>
     <section
       class="relative min-h-screen flex items-center justify-center md:justify-start md:pb-40"
@@ -86,14 +85,14 @@ import Footer from "../components/Footer.astro";
           </p>
           <div class="flex flex-col md:flex-row gap-6">
             <div>
-              <h3 class="pt-8">Our Process</h3>
+              <p class="text-xl font-bold pt-8">Our Process</p>
               <p>
                 Handpicked beans, roasted with care, brewed to perfection for
                 you.
               </p>
             </div>
             <div>
-              <h3 class="pt-8">Meet the Artisans</h3>
+              <p class="text-xl font-bold pt-8">Meet the Artisans</p>
               <p>
                 Drop in and meet the talented individuals behind your favorite
                 brews and their stories.
@@ -193,7 +192,7 @@ import Footer from "../components/Footer.astro";
           class="flex items-center justify-center align-middle pb-16 md:pb-28"
         >
           <a
-            class="py-2.5 px-6 border border-[rgba(4,7,9,0.15)] rounded-2xl bg-[linear-gradient(102deg,#8B4513_0%,#FFD700_100%)] text-white hover:opacity-90 transition-opacity"
+            class="py-2.5 px-6 border border-[rgba(4,7,9,0.15)] rounded-2xl bg-[#008080] text-white hover:opacity-90 transition-opacity"
             href=""
           >
             Learn More
@@ -235,7 +234,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">Light Blend</p>
             <p class="mb-2">Medium</p>
-            <p class="font-bold text-lg">$55</p>
+            <p class="font-bold text-lg"></p>
           </div>
           <div class="text-left pb-12 md:pb-16">
             <Image
@@ -245,7 +244,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">House Blend</p>
             <p class="mb-2">Dark</p>
-            <p class="font-bold text-lg">$48</p>
+            <p class="font-bold text-lg"></p>
           </div>
           <div class="text-left pb-12 md:pb-16">
             <Image
@@ -255,7 +254,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">Dark Blend</p>
             <p class="mb-2">Light</p>
-            <p class="font-bold text-lg">$62</p>
+            <p class="font-bold text-lg"></p>
           </div>
           <div class="text-left pb-12 md:pb-16">
             <Image
@@ -265,7 +264,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">Cold Brew Blend</p>
             <p class="mb-2">Medium</p>
-            <p class="font-bold text-lg">$52</p>
+            <p class="font-bold text-lg"></p>
           </div>
           <div class="text-left pb-12 md:pb-16">
             <Image
@@ -275,7 +274,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">Decaf Blend</p>
             <p class="mb-2">Medium</p>
-            <p class="font-bold text-lg">$45</p>
+            <p class="font-bold text-lg"></p>
           </div>
           <div class="text-left pb-12 md:pb-16">
             <Image
@@ -285,7 +284,7 @@ import Footer from "../components/Footer.astro";
             />
             <p class="text-xl mb-2">French Roast</p>
             <p class="mb-2">Dark</p>
-            <p class="font-bold text-lg">$58</p>
+            <p class="font-bold text-lg"></p>
           </div>
         </div>
       </div>
@@ -703,7 +702,7 @@ import Footer from "../components/Footer.astro";
               Join our passionate team and share your love for coffee.
             </p>
             <a
-              class="py-2.5 px-6 border border-[rgba(4,7,9,0.15)] rounded-2xl bg-[linear-gradient(102deg,#8B4513_0%,#FFD700_100%)] text-white hover:opacity-90 transition-opacity"
+              class="py-2.5 px-6 border border-[rgba(4,7,9,0.15)] rounded-2xl bg-[#008080] text-white hover:opacity-90 transition-opacity"
               href=""
             >
               Open Positions
@@ -713,5 +712,4 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
