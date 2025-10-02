@@ -80,9 +80,14 @@ import card1 from "../../../public/images/store/card1.png";
 
           <!-- Add to cart -->
           <button
-            class="cart__add mt-8 inline-flex items-center justify-center rounded-md bg-[#E0A341] text-white px-5 py-2.5 font-medium shadow hover:bg-[#371B07] focus-visible:outline focus-visible:outline-offset-2 transition cursor-pointer"
-            onclick="addItemToCart()"
-            type="button"
+            class="snipcart-add-item mt-8 inline-flex items-center justify-center rounded-md bg-[#E0A341] text-white px-5 py-2.5 font-medium shadow hover:bg-[#371B07] focus-visible:outline focus-visible:outline-offset-2 transition cursor-pointer"
+            data-item-id="traditional-blend"
+            data-item-price="8.00"
+            data-item-url="/product-page/traditional-blend"
+            data-item-description="TBC Traditional Blend Coffee - 12oz bag"
+            data-item-image="/images/store/card1.png"
+            data-item-name="TBC Traditional Blend"
+            data-item-quantity="1"
           >
             Add to Cart
           </button>
@@ -114,4 +119,16 @@ import card1 from "../../../public/images/store/card1.png";
       countSpan.textContent = count.toString();
     }
   });
+
+  // Update Snipcart quantity when count changes
+  function updateSnipcartQuantity() {
+    const snipcartBtn = document.querySelector(".snipcart-add-item");
+    if (snipcartBtn) {
+      snipcartBtn.setAttribute("data-item-quantity", count.toString());
+    }
+  }
+
+  // Update quantity on both buttons
+  minusBtn?.addEventListener("click", updateSnipcartQuantity);
+  plusBtn?.addEventListener("click", updateSnipcartQuantity);
 </script>

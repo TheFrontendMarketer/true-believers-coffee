@@ -59,16 +59,18 @@ import logo from "../assets/tbc-logo-100x100.png";
         </li>
       </ul>
       <div>
-        <div class="cart-items cart-items__desktop" id="cartCountDesktop">
-          0
-        </div>
-        <a class="relative py-5 px-3 hover:text-orange-400" href="/blog"
-          ><img
+        <button
+          class="snipcart-checkout relative py-5 px-3 hover:text-orange-400"
+        >
+          <img
             src="/images/store/shopping-cart-light-100x100.svg"
             alt="Shopping cart"
             class="w-8 h-8 cursor-pointer"
-          /></a
-        >
+          />
+          <span class="snipcart-items-count cart-items cart-items__desktop"
+            >0</span
+          >
+        </button>
       </div>
 
       <!-- mobile button goes here -->

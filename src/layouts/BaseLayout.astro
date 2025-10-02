@@ -25,5 +25,25 @@ const {
     <Navbar />
     <slot />
     <Footer />
+
+    <!-- Snipcart container -->
+    <div id="snipcart" data-api-key="YOUR_ACTUAL_API_KEY_HERE" hidden></div>
   </body>
+  <script>
+    window.SnipcartSettings = {
+      publicApiKey:
+        "OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2",
+      loadStrategy: "on-user-interaction",
+      currency: "USD",
+      version: "3.7.1",
+      modalStyle: "side",
+    };
+  </script>
+
+  <script src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js" defer
+  ></script>
+  <link
+    href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css"
+    rel="stylesheet"
+  />
 </html>
