@@ -7,8 +7,24 @@ import logo from "../assets/tbc-logo-100x100.png";
 <nav class="bg-[#371B07]">
   <div class="site-container">
     <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <div class="py-4">
+      <!-- Mobile: Shopping Cart (Left) -->
+      <div class="flex md:hidden">
+        <button
+          class="snipcart-checkout relative py-5 pl-0 pr-3 hover:text-orange-400"
+        >
+          <img
+            src="/images/store/shopping-cart-light-100x100.svg"
+            alt="Shopping cart"
+            class="w-8 h-8 cursor-pointer"
+          />
+          <span class="snipcart-items-count cart-items cart-items__desktop"
+            >0</span
+          >
+        </button>
+      </div>
+
+      <!-- Logo (Center on mobile, Left on desktop) -->
+      <div class="py-4 md:order-first">
         <a href="/">
           <Image
             src={logo}
@@ -19,7 +35,8 @@ import logo from "../assets/tbc-logo-100x100.png";
           /></a
         >
       </div>
-      <!-- Navigation Items -->
+
+      <!-- Desktop Navigation (Right) -->
       <ul class="hidden md:flex items-center space-x-4 text-white">
         <li>
           <a
@@ -58,7 +75,9 @@ import logo from "../assets/tbc-logo-100x100.png";
           >
         </li>
       </ul>
-      <div>
+
+      <!-- Desktop Shopping Cart (Right) -->
+      <div class="hidden md:flex">
         <button
           class="snipcart-checkout relative py-5 px-3 hover:text-orange-400"
         >
@@ -73,7 +92,7 @@ import logo from "../assets/tbc-logo-100x100.png";
         </button>
       </div>
 
-      <!-- mobile button goes here -->
+      <!-- Mobile Menu Button (Right on mobile) -->
       <div class="md:hidden flex items-center">
         <button
           class="mobile-menu-button cursor-pointer"

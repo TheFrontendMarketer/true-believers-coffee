@@ -1,0 +1,134 @@
+---
+import Layout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import card6 from "../../../public/images/store/card6.png";
+---
+
+<Layout
+  title="TBC morning Blend"
+  description="True Believers Coffee morning Blend"
+>
+  <main>
+    <section class="product pb-32 md:pb-32 bg-white">
+      <h1 class="text-4xl text-center pt-16 pb-8">Morning Blend</h1>
+      <p class="text-center pb-16">TBC members get FREE delivery!</p>
+
+      <div class="site-container"></div>
+      <!-- Header/menu button (mobile only background icon, none on md+) -->
+      <button
+        class="header__button--product__page bg-[url('../images/menubar_dark.png')] md:bg-none block absolute w-16 h-16 bg-no-repeat bg-contain bg-center cursor-pointer border-0 top-6 left-2 z-[9999]"
+        aria-label="Open menu"
+        type="button"></button>
+
+      <div
+        class="product__container container mx-auto px-5 md:flex md:justify-center md:gap-24"
+      >
+        <!-- Product image card -->
+        <div class="product__card text-center">
+          <Image
+            src={card6}
+            alt="TBC morning Blend bag"
+            class="product__card__img w-full md:h-[25rem] md:w-[22rem] object-cover mx-auto shadow-sm"
+            widths={[320, 480, 640, 768, 960]}
+            sizes="(min-width: 768px) 22rem, 100vw"
+            format="webp"
+            quality={78}
+          />
+        </div>
+
+        <div class="cart text-center mt-8 md:mt-0 relative">
+          <div class="card__content p-2">
+            <h2
+              class="card__title card__title--product mb-4 text-xl font-semibold text-black"
+            >
+              TBC Morning Blend
+            </h2>
+            <p id="cardPrice" class="card__price text-[1.2rem]">$8.00</p>
+            <p class="quantity mt-8">
+              How many bags? Each bag is <strong>12oz</strong>
+            </p>
+          </div>
+
+          <!-- Counter -->
+          <div class="counter flex items-center justify-center">
+            <button
+              class="counter__button border-0 p-0 bg-transparent text-[#371B07] hover:opacity-80"
+              onclick=""
+              aria-label="Decrease quantity"
+            >
+              <img
+                src="/images/store/minus-100x100.svg"
+                alt="minus icon"
+                class="w-8 h-8 cursor-pointer minus-btn"
+              />
+            </button>
+
+            <span id="counter" class="count mx-8"> 1 </span>
+
+            <button
+              class="counter__button border-0 p-0 bg-transparent text-[#371B07] hover:opacity-80"
+              onclick=""
+              aria-label="Increase quantity"
+            >
+              <img
+                src="/images/store/plus-100x100.svg"
+                alt="plus icon"
+                class="w-8 h-8 cursor-pointer plus-btn"
+              />
+            </button>
+          </div>
+
+          <!-- Add to cart -->
+          <button
+            class="snipcart-add-item mt-8 inline-flex items-center justify-center rounded-md bg-[#E0A341] text-white px-5 py-2.5 font-medium shadow hover:bg-[#371B07] focus-visible:outline focus-visible:outline-offset-2 transition cursor-pointer"
+            data-item-id="morning-blend"
+            data-item-price="8.00"
+            data-item-url="/product-page/morning-blend"
+            data-item-description="TBC Morning Blend Coffee - 12oz bag"
+            data-item-image="/images/store/card6.png"
+            data-item-name="TBC Morning Blend"
+            data-item-quantity="1"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const minusBtn = document.querySelector(".minus-btn");
+  const plusBtn = document.querySelector(".plus-btn");
+  const countSpan = document.querySelector(".count");
+
+  let count = 1;
+
+  minusBtn?.addEventListener("click", () => {
+    if (count > 1) {
+      count--;
+      if (countSpan) {
+        countSpan.textContent = count.toString();
+      }
+    }
+  });
+
+  plusBtn?.addEventListener("click", () => {
+    count++;
+    if (countSpan) {
+      countSpan.textContent = count.toString();
+    }
+  });
+
+  // Update Snipcart quantity when count changes
+  function updateSnipcartQuantity() {
+    const snipcartBtn = document.querySelector(".snipcart-add-item");
+    if (snipcartBtn) {
+      snipcartBtn.setAttribute("data-item-quantity", count.toString());
+    }
+  }
+
+  // Update quantity on both buttons
+  minusBtn?.addEventListener("click", updateSnipcartQuantity);
+  plusBtn?.addEventListener("click", updateSnipcartQuantity);
+</script>
