@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+
+media_folder: "src/assets"
+public_folder: "src/assets"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "src/content/products"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Price", name: "price", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["coffee", "merchandise", "food"],
+        }
+      - { label: "Featured", name: "featured", widget: "boolean" }
+
+  - name: "team"
+    label: "Team Members"
+    folder: "src/content/team"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Photo", name: "photo", widget: "image" }
