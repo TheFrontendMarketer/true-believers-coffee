@@ -2,9 +2,10 @@ backend:
   name: github
   repo: TheFrontendMarketer/true-believers-coffee # Replace with your actual GitHub repo
   branch: main
+  site_domain: "https://true-believers-coffee.netlify.app/"
 
 media_folder: "src/assets"
-public_folder: "src/assets"
+public_folder: "/src/assets"
 
 collections:
   - name: "articles"
