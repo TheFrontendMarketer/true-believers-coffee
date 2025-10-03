@@ -6,6 +6,7 @@ author: Alice Johnson
 date: 2025-10-03T17:30:00.000-04:00
 thumbnail: src/assets/pexels-karolina-grabowska-5429787-1-.jpg
 ---
+
 There’s something special about the arrival of pumpkin season—it signals the start of cozy mornings, colorful leaves, and comforting flavors that bring people together. At our shop, pumpkin season is more than just a trend; it’s a way to celebrate the warmth of fall and the joy of sharing a cup of something seasonal with friends, family, or even strangers who might become new friends.
 
 Pumpkin spice coffee has become a seasonal favorite because it combines familiar spices like cinnamon, nutmeg, and cloves with the smooth richness of our freshly roasted coffee. The balance of sweet and earthy flavors creates the perfect drink to pair with crisp autumn air, a slice of pumpkin bread, or simply a moment of quiet in your day. Every sip is a reminder of the season’s comfort and tradition.
