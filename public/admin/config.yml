@@ -1,26 +1,29 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: TheFrontendMarketer/true-believers-coffee # Replace with your actual GitHub repo
+  branch: main
 
 media_folder: "src/assets"
 public_folder: "src/assets"
 
 collections:
-  - name: "products"
-    label: "Products"
-    folder: "src/content/products"
+  - name: "articles"
+    label: "Articles"
+    folder: "src/content/articles"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Price", name: "price", widget: "number" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
       - {
-          label: "Category",
-          name: "category",
-          widget: "select",
-          options: ["coffee", "merchandise", "food"],
+          label: "Author",
+          name: "author",
+          widget: "string",
+          default: "True Believers Coffee",
         }
-      - { label: "Featured", name: "featured", widget: "boolean" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "team"
     label: "Team Members"

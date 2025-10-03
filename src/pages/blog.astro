@@ -1,30 +1,74 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import aboutHero from "../assets/about-hero-2740x1370.jpg";
-import aboutHeroMobile from "../assets/about-hero-800x1200.jpg";
+
+// Get all blog posts
+const posts = await getCollection("articles");
+// Sort posts by date (newest first)
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
-<Layout title="Contact" description="Contact">
-  <main>
+<Layout
+  title="Blog"
+  description="Coffee stories and news from True Believers Coffee"
+>
+  <main class="bg-white">
     <section class="bg-white hero">
       <div class="hero-image">
-        <!-- Mobile image (hidden on desktop) -->
-        <Image
-          src={aboutHeroMobile}
-          alt="About hero mobile"
-          class="w-full h-120 object-cover md:hidden"
-          loading="eager"
-          decoding="async"
-        />
-        <!-- Desktop image (hidden on mobile) -->
-        <Image
-          src={aboutHero}
-          alt="About hero"
-          class="w-full h-120 object-cover hidden md:block"
-          loading="eager"
-          decoding="async"
-        />
+        <div
+          class="w-full h-120 bg-coffee-primary flex items-center justify-center"
+        >
+          <h1 class="text-4xl text-white text-center">Our Coffee Blog</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="site-container">
+        {
+          sortedPosts.length > 0 ? (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {sortedPosts.map((post) => (
+                <article class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                  {post.data.thumbnail && (
+                    <img
+                      src={post.data.thumbnail}
+                      alt={post.data.title}
+                      class="w-full h-48 object-cover"
+                    />
+                  )}
+                  <div class="p-6">
+                    <h2 class="text-xl font-bold mb-2 text-coffee-primary">
+                      {post.data.title}
+                    </h2>
+                    {post.data.excerpt && (
+                      <p class="text-gray-600 mb-4">{post.data.excerpt}</p>
+                    )}
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm text-gray-500">
+                        {new Date(post.data.date).toLocaleDateString()}
+                      </span>
+                      {post.data.author && (
+                        <span class="text-sm text-coffee-primary">
+                          By {post.data.author}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div class="text-center py-16">
+              <h2 class="text-2xl text-gray-600 mb-4">No blog posts yet</h2>
+              <p class="text-gray-500">
+                Check back soon for coffee stories and news!
+              </p>
+            </div>
+          )
+        }
       </div>
     </section>
   </main>
