@@ -4,11 +4,7 @@ excerpt: Celebrate the cozy flavors of fall with our favorite pumpkin-inspired
   coffee drinks, tips, and seasonal brews.
 author: Alice Johnson
 date: 2025-10-03T17:30:00.000-04:00
-<<<<<<< HEAD
-thumbnail: /src/assets/pexels-karolina-grabowska-5429787-1-.jpg
-=======
 thumbnail: "/src/assets/pexels-karolina-grabowska-5429787-1-.jpg"
->>>>>>> 49343ee (updated blog image)
 ---
 
 There’s something special about the arrival of pumpkin season—it signals the start of cozy mornings, colorful leaves, and comforting flavors that bring people together. At our shop, pumpkin season is more than just a trend; it’s a way to celebrate the warmth of fall and the joy of sharing a cup of something seasonal with friends, family, or even strangers who might become new friends.
