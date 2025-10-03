@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import aboutHero from "../assets/about-hero-2740x1370.jpg";
+import aboutHeroMobile from "../assets/about-hero-800x1200.jpg";
+---
+
+<Layout title="Contact" description="Contact">
+  <main>
+    <section class="bg-white hero">
+      <div class="hero-image">
+        <!-- Mobile image (hidden on desktop) -->
+        <Image
+          src={aboutHeroMobile}
+          alt="About hero mobile"
+          class="w-full h-120 object-cover md:hidden"
+          loading="eager"
+          decoding="async"
+        />
+        <!-- Desktop image (hidden on mobile) -->
+        <Image
+          src={aboutHero}
+          alt="About hero"
+          class="w-full h-120 object-cover hidden md:block"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

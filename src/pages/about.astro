@@ -1,0 +1,198 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import aboutHero from "../assets/about-hero-2740x1370.jpg";
+import aboutHeroMobile from "../assets/about-hero-800x1200.jpg";
+import aboutImage1 from "../assets/about-image1-800x800.jpg";
+import aboutImage2 from "../assets/about-image2-800x800.jpg";
+import aboutImage3 from "../assets/about-image3-800x800.jpg";
+import aboutImage4 from "../assets/about-image4-800x800.jpg";
+---
+
+<Layout title="Contact" description="Contact">
+  <main>
+    <section class="bg-white hero">
+      <div class="hero-image">
+        <!-- Mobile image (hidden on desktop) -->
+        <Image
+          src={aboutHeroMobile}
+          alt="About hero mobile"
+          class="w-full h-120 object-cover md:hidden"
+          loading="eager"
+          decoding="async"
+        />
+        <!-- Desktop image (hidden on mobile) -->
+        <Image
+          src={aboutHero}
+          alt="About hero"
+          class="w-full h-120 object-cover hidden md:block"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="site-container">
+        <h1 class="text-4xl pt-16 text-center md:text-left pb-18 md:pb-30">
+          About Us
+        </h1>
+        <div
+          class="flex flex-col flex-row-960 gap-10 lg:gap-25 items-center items-start-960 md:px-12"
+        >
+          <Image
+            src={aboutImage1}
+            alt="About hero"
+            class="w-90 h-90 object-cover rounded-lg"
+          />
+          <div class="text-center text-left-960">
+            <h2 class="text-3xl font-bold pb-3">Our Story</h2>
+            <p>
+              True Believers Coffee started with a simple idea: bring people
+              together over a really good cup of coffee. From our very first
+              roast, we wanted to create a place where neighbors, students,
+              families, and friends could slow down, share a laugh, and feel at
+              home.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col flex-row-960 flex-row-reverse-960 gap-10 lg:gap-25 items-center items-start-960 pt-30 md:px-12"
+        >
+          <Image
+            src={aboutImage2}
+            alt="About hero"
+            class="w-90 h-90 object-cover rounded-lg"
+          />
+          <div class="text-center text-left-960">
+            <h2 class="text-3xl font-bold pb-3">Our Coffee</h2>
+            <p>
+              We source beans from sustainable farms and roast them in small
+              batches to bring out bold, balanced flavors. Each bag of coffee is
+              crafted with care, whether you’re sipping in our shop or brewing
+              at home.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col flex-row-960 gap-10 lg:gap-25 items-center items-start-960 pt-30 md:px-12"
+        >
+          <Image
+            src={aboutImage3}
+            alt="About hero"
+            class="w-90 h-90 object-cover rounded-lg"
+          />
+          <div class="text-center text-left-960">
+            <h2 class="text-3xl font-bold pb-3">Our Community</h2>
+            <p>
+              We’re proud to call this town home. Our walls have seen first
+              dates, study sessions, and countless catch-ups between old
+              friends. We support local artists, host open mic nights, and
+              always look for ways to give back to the community that supports
+              us.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col flex-row-960 flex-row-reverse-960 gap-10 lg:gap-25 items-center items-start-960 pt-30 md:px-12 pb-16"
+        >
+          <Image
+            src={aboutImage4}
+            alt="About hero"
+            class="w-90 h-90 object-cover rounded-lg"
+          />
+          <div class="text-center text-left-960">
+            <h2 class="text-3xl font-bold pb-3">Our Promise</h2>
+            <p>
+              When you walk into True Believers Coffee, you’re not just a
+              customer—you’re family. Whether you’re here for your morning
+              latte, a bag of beans for the week, or just a friendly hello, our
+              team is here to make your day brighter. us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white py-16">
+      <div class="site-container">
+        <h2 class="text-4xl text-center mb-12">Join Our Team</h2>
+        <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
+          We're always looking for friendly, coffee-loving people to join our
+          crew! Here are some of the roles we have open:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Barista -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-coffee-primary">Barista</h3>
+            <p class="text-gray-700">
+              Craft delicious drinks and create a welcoming space for our
+              guests.
+            </p>
+          </div>
+
+          <!-- Shift Lead -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-coffee-primary">
+              Shift Lead
+            </h3>
+            <p class="text-gray-700">
+              Support daily operations, keep the shop running smoothly, and
+              mentor team members.
+            </p>
+          </div>
+
+          <!-- Kitchen / Prep Staff -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-coffee-primary">
+              Kitchen / Prep Staff
+            </h3>
+            <p class="text-gray-700">
+              Help with baking, food prep, and keeping things fresh behind the
+              counter.
+            </p>
+          </div>
+
+          <!-- Customer Experience / Cashier -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-coffee-primary">
+              Customer Experience / Cashier
+            </h3>
+            <p class="text-gray-700">
+              Greet guests, take orders, and make sure every visit feels
+              special.
+            </p>
+          </div>
+
+          <!-- Roasting Assistant -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-coffee-primary">
+              Roasting Assistant
+            </h3>
+            <p class="text-gray-700">
+              Learn the craft of roasting and help us bring out the best flavors
+              in our beans.
+            </p>
+          </div>
+
+          <!-- Community & Events Helper -->
+          <div class="bg-[#F5E7DC] p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3">Community & Events Helper</h3>
+            <p class="">
+              Assist with local events, coffee tastings, and pop-up markets.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-lg mb-6">Interested in joining our team?</p>
+          <a
+            href="/contact"
+            class="bg-[#E0A341] hover:bg-[#371B07] text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-colors"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -38,6 +38,23 @@
   .bg-coffee-primary {
     background-color: #371B07;
   }
+  
+  /* Custom breakpoint for 959px */
+  @media (min-width: 960px) {
+    .flex-row-960 {
+      flex-direction: row;
+    }
+    /* Add this to your global.css file in the @media (min-width: 960px) section */
+    .flex-row-reverse-960 {
+      flex-direction: row-reverse;
+    }
+    .items-start-960 {
+      align-items: flex-start;
+    }
+    .text-left-960 {
+      text-align: left;
+    }
+  }
 }
 
 html, body {
