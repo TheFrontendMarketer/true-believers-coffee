@@ -35,6 +35,19 @@ const {
     </div>
   </body>
   <script>
+    // Detect environment and set appropriate domains
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    const isNetlify =
+      window.location.hostname === "true-believers-coffee.netlify.app";
+
+    let allowedDomains = ["localhost", "127.0.0.1"];
+
+    if (isNetlify) {
+      allowedDomains = ["true-believers-coffee.netlify.app"];
+    }
+
     window.SnipcartSettings = {
       publicApiKey:
         "OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2",
@@ -42,11 +55,7 @@ const {
       currency: "USD",
       version: "3.7.1",
       modalStyle: "side",
-      allowedDomains: [
-        "localhost",
-        "true-believers-coffee.netlify.app",
-        "127.0.0.1",
-      ],
+      allowedDomains: allowedDomains,
       testMode: true, // Enable test mode
     };
   </script>
