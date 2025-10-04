@@ -31,35 +31,37 @@ const sortedPosts = posts.sort(
           sortedPosts.length > 0 ? (
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {sortedPosts.map((post) => (
-                <article class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  {post.data.thumbnail && (
-                    <img
-                      src={post.data.thumbnail}
-                      alt={post.data.title}
-                      class="w-full h-48 object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  )}
-                  <div class="p-6">
-                    <h2 class="text-xl font-bold mb-2 text-coffee-primary">
-                      {post.data.title}
-                    </h2>
-                    {post.data.excerpt && (
-                      <p class="text-gray-600 mb-4">{post.data.excerpt}</p>
+                <a href={`/articles/${post.slug}`} class="block">
+                  <article class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+                    {post.data.thumbnail && (
+                      <img
+                        src={post.data.thumbnail}
+                        alt={post.data.title}
+                        class="w-full h-48 object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     )}
-                    <div class="flex justify-between items-center">
-                      <span class="text-sm text-gray-500">
-                        {new Date(post.data.date).toLocaleDateString()}
-                      </span>
-                      {post.data.author && (
-                        <span class="text-sm text-coffee-primary">
-                          By {post.data.author}
-                        </span>
+                    <div class="p-6">
+                      <h2 class="text-xl font-bold mb-2 text-coffee-primary">
+                        {post.data.title}
+                      </h2>
+                      {post.data.excerpt && (
+                        <p class="text-gray-600 mb-4">{post.data.excerpt}</p>
                       )}
+                      <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">
+                          {new Date(post.data.date).toLocaleDateString()}
+                        </span>
+                        {post.data.author && (
+                          <span class="text-sm text-coffee-primary">
+                            By {post.data.author}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </a>
               ))}
             </div>
           ) : (
