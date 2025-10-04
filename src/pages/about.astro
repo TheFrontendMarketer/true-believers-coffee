@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import aboutHero from "../assets/about-hero-2740x1370.jpg";
+import aboutHero from "../assets/about-hero-1920x960.jpg";
 import aboutHeroMobile from "../assets/about-hero-800x1200.jpg";
 import aboutImage1 from "../assets/about-image1-800x800.jpg";
 import aboutImage2 from "../assets/about-image2-800x800.jpg";
@@ -42,6 +42,7 @@ import aboutImage4 from "../assets/about-image4-800x800.jpg";
           <Image
             src={aboutImage1}
             alt="About hero"
+            loading="lazy"
             class="w-90 h-90 object-cover rounded-lg"
           />
           <div class="text-center text-left-960">
@@ -61,6 +62,7 @@ import aboutImage4 from "../assets/about-image4-800x800.jpg";
           <Image
             src={aboutImage2}
             alt="About hero"
+            loading="lazy"
             class="w-90 h-90 object-cover rounded-lg"
           />
           <div class="text-center text-left-960">
@@ -79,6 +81,7 @@ import aboutImage4 from "../assets/about-image4-800x800.jpg";
           <Image
             src={aboutImage3}
             alt="About hero"
+            loading="lazy"
             class="w-90 h-90 object-cover rounded-lg"
           />
           <div class="text-center text-left-960">
@@ -98,6 +101,7 @@ import aboutImage4 from "../assets/about-image4-800x800.jpg";
           <Image
             src={aboutImage4}
             alt="About hero"
+            loading="lazy"
             class="w-90 h-90 object-cover rounded-lg"
           />
           <div class="text-center text-left-960">
