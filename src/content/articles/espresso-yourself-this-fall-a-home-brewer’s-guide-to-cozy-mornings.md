@@ -3,7 +3,7 @@ title: "Espresso Yourself This Fall: A Home Brewer’s Guide to Cozy Mornings"
 excerpt: Fall is here, and so are the flavors that make the season shine. From
   brewing basics to autumn-inspired twists, learn how to craft the perfect cup
   of coffee in your own kitchen.
-author: True Believers Coffee
+author: Tom Brown
 date: 2025-10-04T05:06:00.000-04:00
 thumbnail: /images/pexels-jakubzerdzicki-20007217.jpg
 ---
