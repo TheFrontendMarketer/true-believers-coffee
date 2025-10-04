@@ -16,55 +16,51 @@ const { Content } = await article.render();
 
 <Layout title={article.data.title} description={article.data.excerpt}>
   <main class="bg-white">
-    <section class="bg-white hero">
-      <div class="hero-image">
-        <div
-          class="w-full h-120 bg-coffee-primary flex items-center justify-center"
-        >
-          <h1 class="text-4xl text-white text-center">{article.data.title}</h1>
-        </div>
-      </div>
+    <section class="site-container">
+      <h1 class="text-4xl text-center pt-16">{article.data.title}</h1>
     </section>
 
     <section class="py-16">
-      <div class="site-container max-w-4xl">
-        <article class="prose prose-lg mx-auto">
-          {
-            article.data.thumbnail && (
-              <img
-                src={article.data.thumbnail}
-                alt={article.data.title}
-                class="w-full h-96 object-cover rounded-lg mb-8"
-                loading="eager"
-                decoding="async"
-              />
-            )
-          }
+      <div class="site-container">
+        <div class="md:px-40">
+          <article class="prose prose-lg mx-auto">
+            {
+              article.data.thumbnail && (
+                <img
+                  src={article.data.thumbnail}
+                  alt={article.data.title}
+                  class="w-full h-96 object-cover rounded-lg mb-8"
+                  loading="eager"
+                  decoding="async"
+                />
+              )
+            }
 
-          <div class="mb-8">
-            <div
-              class="flex justify-between items-center text-sm text-gray-500 mb-4"
-            >
-              <span>{new Date(article.data.date).toLocaleDateString()}</span>
+            <div class="mb-8">
+              <div
+                class="flex justify-between items-center text-sm text-gray-500 mb-4"
+              >
+                <span>{new Date(article.data.date).toLocaleDateString()}</span>
+                {
+                  article.data.author && (
+                    <span class="text-coffee-primary">
+                      By {article.data.author}
+                    </span>
+                  )
+                }
+              </div>
               {
-                article.data.author && (
-                  <span class="text-coffee-primary">
-                    By {article.data.author}
-                  </span>
+                article.data.excerpt && (
+                  <p class="text-xl text-gray-600 italic">
+                    {article.data.excerpt}
+                  </p>
                 )
               }
             </div>
-            {
-              article.data.excerpt && (
-                <p class="text-xl text-gray-600 italic">
-                  {article.data.excerpt}
-                </p>
-              )
-            }
-          </div>
 
-          <Content />
-        </article>
+            <Content />
+          </article>
+        </div>
 
         <div class="mt-12 text-center">
           <a

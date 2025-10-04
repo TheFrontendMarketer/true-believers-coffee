@@ -88,3 +88,47 @@ body {
     color: white;
     z-index: 10;
 }
+
+/* Article content spacing for better readability */
+.article-content p {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #371B07;
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.article-content blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #371B07;
+  background-color: #f8f9fa;
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content strong {
+  color: #371B07;
+  font-weight: 700;
+}
