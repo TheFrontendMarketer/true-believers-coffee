@@ -132,3 +132,13 @@ body {
   color: #371B07;
   font-weight: 700;
 }
+
+/* Override Snipcart fonts to use self-hosted fonts */
+.snipcart,
+.snipcart *,
+.snipcart-modal,
+.snipcart-modal *,
+.snipcart-checkout,
+.snipcart-checkout * {
+  font-family: 'Bitter', 'Gloock', sans-serif !important;
+}
