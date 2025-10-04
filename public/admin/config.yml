@@ -4,8 +4,8 @@ backend:
   branch: main
   site_domain: "https://true-believers-coffee.netlify.app/"
 
-media_folder: "src/assets"
-public_folder: "/src/assets"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "articles"
