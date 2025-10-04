@@ -1,134 +1,107 @@
 ---
 import Layout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import card2 from "../../../public/images/store/card2.png";
+import summerBlend from "../../assets/410x506_light_coffee.jpg";
 ---
 
 <Layout
-  title="TBC Traditional Blend"
-  description="True Believers Coffee Traditional Blend"
+  title="Summer Blend"
+  description="Light and refreshing summer blend coffee"
 >
-  <main>
-    <section class="product pb-32 md:pb-32 bg-white">
-      <h1 class="text-4xl text-center pt-16 pb-8">Summer Blend</h1>
-      <p class="text-center pb-16">TBC members get FREE delivery!</p>
+  <main class="bg-white">
+    <section class="bg-white hero">
+      <div class="hero-image">
+        <Image
+          src={summerBlend}
+          alt="Summer Blend Coffee"
+          class="w-full h-120 object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </section>
 
-      <div class="site-container"></div>
-      <!-- Header/menu button (mobile only background icon, none on md+) -->
-      <button
-        class="header__button--product__page bg-[url('../images/menubar_dark.png')] md:bg-none block absolute w-16 h-16 bg-no-repeat bg-contain bg-center cursor-pointer border-0 top-6 left-2 z-[9999]"
-        aria-label="Open menu"
-        type="button"></button>
+    <section class="bg-white">
+      <div class="site-container py-16">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <!-- Product Image -->
+          <div class="w-full lg:w-1/2">
+            <Image
+              src={summerBlend}
+              alt="Summer Blend Coffee"
+              class="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
 
-      <div
-        class="product__container container mx-auto px-5 md:flex md:justify-center md:gap-24"
-      >
-        <!-- Product image card -->
-        <div class="product__card text-center">
-          <Image
-            src={card2}
-            alt="TBC Traditional Blend bag"
-            class="product__card__img w-full md:h-[25rem] md:w-[22rem] object-cover mx-auto shadow-sm"
-            widths={[320, 480, 640, 768, 960]}
-            sizes="(min-width: 768px) 22rem, 100vw"
-            format="webp"
-            quality={78}
-          />
-        </div>
+          <!-- Product Details -->
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h1 class="text-4xl font-bold text-coffee-primary">Summer Blend</h1>
+            <p class="text-lg text-gray-600">
+              A light and refreshing blend perfect for warm weather. This
+              seasonal coffee features bright, citrusy notes with a smooth,
+              clean finish that's ideal for iced coffee or your morning cup.
+            </p>
 
-        <div class="cart text-center mt-8 md:mt-0 relative">
-          <div class="card__content p-2">
-            <h2
-              class="card__title card__title--product mb-4 text-xl font-semibold text-black"
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <span class="text-2xl font-bold text-coffee-primary">$8.00</span
+                >
+                <span class="text-sm text-gray-500">12oz bag</span>
+              </div>
+
+              <div class="space-y-2">
+                <h3 class="text-lg font-semibold">Tasting Notes:</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                  <li>Bright citrus notes</li>
+                  <li>Smooth, clean finish</li>
+                  <li>Perfect for iced coffee</li>
+                  <li>Light to medium roast</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Add to cart -->
+            <button
+              class="snipcart-add-item mt-8 inline-flex items-center justify-center rounded-md bg-[#E0A341] text-white px-5 py-2.5 font-medium shadow hover:bg-[#371B07] focus-visible:outline focus-visible:outline-offset-2 transition cursor-pointer"
+              data-item-id="summer-blend"
+              data-item-price="8.00"
+              data-item-url={Astro.url.origin + "/product-page/summer-blend"}
+              data-item-description="TBC Summer Blend Coffee - 12oz bag"
+              data-item-image="/images/store/card2.png"
+              data-item-name="TBC Summer Blend"
+              data-item-quantity="1"
             >
-              TBC Summer Blend
-            </h2>
-            <p id="cardPrice" class="card__price text-[1.2rem]">$8.00</p>
-            <p class="quantity mt-8">
-              How many bags? Each bag is <strong>12oz</strong>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="bg-gray-50 py-16">
+      <div class="site-container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">Fresh Roasted</h3>
+            <p class="text-gray-600">
+              Roasted to order for maximum freshness and flavor.
             </p>
           </div>
-
-          <!-- Counter -->
-          <div class="counter flex items-center justify-center">
-            <button
-              class="counter__button border-0 p-0 bg-transparent text-[#371B07] hover:opacity-80"
-              onclick=""
-              aria-label="Decrease quantity"
-            >
-              <img
-                src="/images/store/minus-100x100.svg"
-                alt="minus icon"
-                class="w-8 h-8 cursor-pointer minus-btn"
-              />
-            </button>
-
-            <span id="counter" class="count mx-8"> 1 </span>
-
-            <button
-              class="counter__button border-0 p-0 bg-transparent text-[#371B07] hover:opacity-80"
-              onclick=""
-              aria-label="Increase quantity"
-            >
-              <img
-                src="/images/store/plus-100x100.svg"
-                alt="plus icon"
-                class="w-8 h-8 cursor-pointer plus-btn"
-              />
-            </button>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">Sustainable</h3>
+            <p class="text-gray-600">
+              Ethically sourced beans from certified farms.
+            </p>
           </div>
-
-          <!-- Add to cart -->
-          <button
-            class="snipcart-add-item mt-8 inline-flex items-center justify-center rounded-md bg-[#E0A341] text-white px-5 py-2.5 font-medium shadow hover:bg-[#371B07] focus-visible:outline focus-visible:outline-offset-2 transition cursor-pointer"
-            data-item-id="summer-blend"
-            data-item-price="8.00"
-            data-item-url="/product-page/summer-blend"
-            data-item-description="TBC Summer Blend Coffee - 12oz bag"
-            data-item-image="/images/store/card2.png"
-            data-item-name="TBC Summer Blend"
-            data-item-quantity="1"
-          >
-            Add to Cart
-          </button>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">Fast Shipping</h3>
+            <p class="text-gray-600">Free shipping on orders over $25.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 </Layout>
-
-<script>
-  const minusBtn = document.querySelector(".minus-btn");
-  const plusBtn = document.querySelector(".plus-btn");
-  const countSpan = document.querySelector(".count");
-
-  let count = 1;
-
-  minusBtn?.addEventListener("click", () => {
-    if (count > 1) {
-      count--;
-      if (countSpan) {
-        countSpan.textContent = count.toString();
-      }
-    }
-  });
-
-  plusBtn?.addEventListener("click", () => {
-    count++;
-    if (countSpan) {
-      countSpan.textContent = count.toString();
-    }
-  });
-
-  // Update Snipcart quantity when count changes
-  function updateSnipcartQuantity() {
-    const snipcartBtn = document.querySelector(".snipcart-add-item");
-    if (snipcartBtn) {
-      snipcartBtn.setAttribute("data-item-quantity", count.toString());
-    }
-  }
-
-  // Update quantity on both buttons
-  minusBtn?.addEventListener("click", updateSnipcartQuantity);
-  plusBtn?.addEventListener("click", updateSnipcartQuantity);
-</script>
