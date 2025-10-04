@@ -142,9 +142,3 @@ body {
 .snipcart-checkout * {
   font-family: 'Bitter', 'Gloock', sans-serif !important;
 }
-
-.image-sharp {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-}
