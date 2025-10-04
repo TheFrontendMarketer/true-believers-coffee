@@ -27,7 +27,12 @@ const {
     <Footer />
 
     <!-- Snipcart container -->
-    <div id="snipcart" data-api-key="YOUR_ACTUAL_API_KEY_HERE" hidden></div>
+    <div
+      id="snipcart"
+      data-api-key="OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2"
+      hidden
+    >
+    </div>
   </body>
   <script>
     window.SnipcartSettings = {
@@ -37,6 +42,12 @@ const {
       currency: "USD",
       version: "3.7.1",
       modalStyle: "side",
+      allowedDomains: [
+        "localhost",
+        "true-believers-coffee.netlify.app",
+        "127.0.0.1",
+      ],
+      testMode: true, // Enable test mode
     };
   </script>
 
