@@ -6,7 +6,7 @@
     "category": "hot",
     "tags": ["milk"],
     "description": "Rich espresso with steamed milk and a light layer of foam.",
-    "image": "/src/assets/latte-400x280.jpg"
+    "image": "images/latte-400x280.jpg"
   },
   {
     "id": "iced-matcha",
@@ -15,7 +15,7 @@
     "category": "cold",
     "tags": ["non-coffee", "milk-optional"],
     "description": "Stone-ground matcha over ice. Lightly sweet if you like.",
-    "image": "/src/assets/iced-matcha-400x280.jpg"
+    "image": "images/iced-matcha-400x280.jpg"
   },
   {
     "id": "americano",
@@ -24,7 +24,7 @@
     "category": "hot",
     "tags": ["black"],
     "description": "Espresso with hot water. Simple, bold, balanced.",
-    "image": "/src/assets/americano-400x280.jpg"
+    "image": "images/americano-400x280.jpg"
   },
   {
     "id": "cold-brew",
@@ -33,7 +33,7 @@
     "category": "cold",
     "tags": ["black"],
     "description": "Slow-steeped, chocolatey, smooth finish.",
-    "image": "/src/assets/cold-brew-800x600.jpg"
+    "image": "images/cold-brew-800x600.jpg"
   },
   {
     "id": "croissant",
@@ -42,7 +42,7 @@
     "category": "pastry",
     "tags": ["veg"],
     "description": "Flaky layers, baked fresh daily.",
-    "image": "/src/assets/butter-croissant-400x280.jpg"
+    "image": "images/butter-croissant-400x280.jpg"
   },
   {
     "id": "banana-bread",
@@ -51,7 +51,7 @@
     "category": "pastry",
     "tags": ["gf", "veg"],
     "description": "Moist loaf with toasted walnuts. Gluten-free.",
-    "image": "/src/assets/banana-bread-400x280.jpg"
+    "image": "images/banana-bread-400x280.jpg"
   },
   {
     "id": "pumpkin-spice-latte",
@@ -60,7 +60,7 @@
     "category": "hot",
     "tags": ["seasonal", "milk"],
     "description": "Espresso, steamed milk, and a cozy pumpkin spice blend topped with whipped cream.",
-    "image": "/src/assets/pumpkin-spice-latte-800x600.jpg"
+    "image": "images/pumpkin-spice-latte-800x600.jpg"
   },
   {
     "id": "maple-cold-brew",
@@ -69,7 +69,7 @@
     "category": "cold",
     "tags": ["seasonal", "black"],
     "description": "Cold brew infused with real maple syrup and a hint of vanilla. Autumn in a glass.",
-    "image": "/src/assets/maple-cold-brew-800x600.jpg"
+    "image": "images/maple-cold-brew-800x600.jpg"
   },
   {
     "id": "apple-cider",
@@ -78,6 +78,6 @@
     "category": "hot",
     "tags": ["seasonal", "non-coffee"],
     "description": "Steamed apple cider with cinnamon and clove — perfect for chilly afternoons.",
-    "image": "/src/assets/apple-cider-800x600.jpg"
+    "image": "images/apple-cider-800x600.jpg"
   }
 ]

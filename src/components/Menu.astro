@@ -1,6 +1,19 @@
 ---
 import menuData from "../data/menu.json";
 
+// Create a mapping object for public image paths
+const imageMap = {
+  latte: "/images/latte-400x280.jpg",
+  "iced-matcha": "/images/iced-matcha-400x280.jpg",
+  americano: "/images/americano-400x280.jpg",
+  "cold-brew": "/images/cold-brew-800x600.jpg",
+  croissant: "/images/butter-croissant-400x280.jpg",
+  "banana-bread": "/images/banana-bread-400x280.jpg",
+  "pumpkin-spice-latte": "/images/pumpkin-spice-latte-800x600.jpg",
+  "maple-cold-brew": "/images/maple-cold-brew-800x600.jpg",
+  "apple-cider": "/images/apple-cider-800x600.jpg",
+};
+
 // Get unique categories
 const categories = ["all", ...new Set(menuData.map((item) => item.category))];
 ---
@@ -54,9 +67,9 @@ const categories = ["all", ...new Set(menuData.map((item) => item.category))];
             data-desc={item.description.toLowerCase()}
           >
             <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center overflow-hidden">
-              {item.image ? (
+              {imageMap[item.id] ? (
                 <img
-                  src={item.image}
+                  src={imageMap[item.id]}
                   alt={item.name}
                   class="w-full h-full object-cover"
                   loading="lazy"
