@@ -1,0 +1,176 @@
+---
+import menuData from "../data/menu.json";
+
+// Get unique categories
+const categories = ["all", ...new Set(menuData.map((item) => item.category))];
+---
+
+<section class="menu-section bg-white py-16">
+  <div class="site-container">
+    <h1 class="text-4xl text-center mb-12 text-coffee-primary">Our Menu</h1>
+
+    <!-- Search and Filter Controls -->
+    <div class="mb-12">
+      <!-- Search Bar -->
+      <div class="mb-8">
+        <input
+          type="text"
+          id="menu-search"
+          placeholder="Search menu items..."
+          class="w-full max-w-md mx-auto block px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coffee-primary focus:border-transparent"
+        />
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3">
+        {
+          categories.map((category) => (
+            <button
+              class={`px-6 py-2 rounded-full transition-colors ${
+                category === "all"
+                  ? "bg-coffee-primary text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-coffee-primary hover:text-white"
+              }`}
+              data-category={category}
+              aria-selected={category === "all"}
+            >
+              {category === "all"
+                ? "All Items"
+                : category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        menuData.map((item) => (
+          <div
+            class="menu-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+            data-category={item.category}
+            data-name={item.name.toLowerCase()}
+            data-desc={item.description.toLowerCase()}
+          >
+            <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center overflow-hidden">
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <span class="text-gray-500 text-sm">No image available</span>
+              )}
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-coffee-primary">
+                  {item.name}
+                </h3>
+                <span class="text-lg font-semibold text-coffee-primary">
+                  ${item.price}
+                </span>
+              </div>
+              <p class="text-gray-600 mb-3">{item.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  // Get DOM elements
+  const search = document.getElementById("menu-search");
+  const grid = document.getElementById("menu-grid");
+  const buttons = document.querySelectorAll("button[data-category]");
+
+  let activeCategory = "all";
+
+  // Animation function
+  function animateCards() {
+    const visibleCards = document.querySelectorAll(".menu-card:not(.hidden)");
+    visibleCards.forEach((card, index) => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(20px)";
+
+      setTimeout(() => {
+        card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }, index * 100);
+    });
+  }
+
+  // Filter function
+  function applyFilters() {
+    const query = (search?.value || "").trim().toLowerCase();
+    const items = grid?.querySelectorAll(".menu-card") || [];
+
+    items.forEach((el) => {
+      const category = el.getAttribute("data-category");
+      const name = el.getAttribute("data-name") || "";
+      const desc = el.getAttribute("data-desc") || "";
+
+      const matchCategory =
+        activeCategory === "all" || category === activeCategory;
+      const matchText = !query || name.includes(query) || desc.includes(query);
+
+      // If there's a search query, prioritize text search over category filter
+      // If no search query, use category filter
+      const shouldShow = query ? matchText : matchCategory && matchText;
+
+      el.classList.toggle("hidden", !shouldShow);
+    });
+
+    animateCards();
+  }
+
+  // Category button event listeners
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent event bubbling
+      e.preventDefault(); // Prevent default behavior
+
+      activeCategory = btn.dataset.category;
+      buttons.forEach((b) =>
+        b.setAttribute("aria-selected", String(b === btn))
+      );
+      applyFilters();
+    });
+  });
+
+  // Search input event listener
+  search?.addEventListener("input", applyFilters);
+
+  // Ensure menu cards don't interfere with filtering
+  const cards = document.querySelectorAll(".menu-card");
+  cards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent any event bubbling
+      e.preventDefault(); // Prevent any default behavior
+      // Do nothing else - cards are purely visual
+    });
+  });
+
+  // Initial animation on load
+  animateCards();
+</script>
+
+<style>
+  .menu-card.hidden {
+    display: none;
+  }
+</style>

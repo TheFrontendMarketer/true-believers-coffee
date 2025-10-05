@@ -1,0 +1,83 @@
+[
+  {
+    "id": "latte",
+    "name": "Caffè Latte",
+    "price": 4.75,
+    "category": "hot",
+    "tags": ["milk"],
+    "description": "Rich espresso with steamed milk and a light layer of foam.",
+    "image": "/src/assets/latte-400x280.jpg"
+  },
+  {
+    "id": "iced-matcha",
+    "name": "Iced Matcha",
+    "price": 5.25,
+    "category": "cold",
+    "tags": ["non-coffee", "milk-optional"],
+    "description": "Stone-ground matcha over ice. Lightly sweet if you like.",
+    "image": "/src/assets/iced-matcha-400x280.jpg"
+  },
+  {
+    "id": "americano",
+    "name": "Americano",
+    "price": 3.5,
+    "category": "hot",
+    "tags": ["black"],
+    "description": "Espresso with hot water. Simple, bold, balanced.",
+    "image": "/src/assets/americano-400x280.jpg"
+  },
+  {
+    "id": "cold-brew",
+    "name": "Cold Brew",
+    "price": 4.95,
+    "category": "cold",
+    "tags": ["black"],
+    "description": "Slow-steeped, chocolatey, smooth finish.",
+    "image": "/src/assets/cold-brew-800x600.jpg"
+  },
+  {
+    "id": "croissant",
+    "name": "Butter Croissant",
+    "price": 3.95,
+    "category": "pastry",
+    "tags": ["veg"],
+    "description": "Flaky layers, baked fresh daily.",
+    "image": "/src/assets/butter-croissant-400x280.jpg"
+  },
+  {
+    "id": "banana-bread",
+    "name": "Banana Bread (GF)",
+    "price": 3.95,
+    "category": "pastry",
+    "tags": ["gf", "veg"],
+    "description": "Moist loaf with toasted walnuts. Gluten-free.",
+    "image": "/src/assets/banana-bread-400x280.jpg"
+  },
+  {
+    "id": "pumpkin-spice-latte",
+    "name": "Pumpkin Spice Latte",
+    "price": 5.25,
+    "category": "hot",
+    "tags": ["seasonal", "milk"],
+    "description": "Espresso, steamed milk, and a cozy pumpkin spice blend topped with whipped cream.",
+    "image": "/src/assets/pumpkin-spice-latte-800x600.jpg"
+  },
+  {
+    "id": "maple-cold-brew",
+    "name": "Maple Cold Brew",
+    "price": 5.5,
+    "category": "cold",
+    "tags": ["seasonal", "black"],
+    "description": "Cold brew infused with real maple syrup and a hint of vanilla. Autumn in a glass.",
+    "image": "/src/assets/maple-cold-brew-800x600.jpg"
+  },
+  {
+    "id": "apple-cider",
+    "name": "Warm Apple Cider",
+    "price": 4.25,
+    "category": "hot",
+    "tags": ["seasonal", "non-coffee"],
+    "description": "Steamed apple cider with cinnamon and clove — perfect for chilly afternoons.",
+    "image": "/src/assets/apple-cider-800x600.jpg"
+  }
+]
