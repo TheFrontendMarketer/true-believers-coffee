@@ -39,10 +39,10 @@ const categories = ["all", ...new Set(menuData.map((item) => item.category))];
         {
           categories.map((category) => (
             <button
-              class={`px-6 py-2 rounded-full transition-colors ${
+              class={`px-6 py-2 rounded-full transition-colors cursor-pointer ${
                 category === "all"
                   ? "bg-coffee-primary text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-coffee-primary hover:text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-coffee-primary "
               }`}
               data-category={category}
               aria-selected={category === "all"}
@@ -57,7 +57,10 @@ const categories = ["all", ...new Set(menuData.map((item) => item.category))];
     </div>
 
     <!-- Menu Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      id="menu-grid"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
       {
         menuData.map((item) => (
           <div
@@ -158,9 +161,22 @@ const categories = ["all", ...new Set(menuData.map((item) => item.category))];
       e.preventDefault(); // Prevent default behavior
 
       activeCategory = btn.dataset.category;
-      buttons.forEach((b) =>
-        b.setAttribute("aria-selected", String(b === btn))
-      );
+
+      // Update button styles
+      buttons.forEach((b) => {
+        const isSelected = b === btn;
+        b.setAttribute("aria-selected", String(isSelected));
+
+        // Update classes based on selection
+        if (isSelected) {
+          b.className =
+            "px-6 py-2 rounded-full transition-colors cursor-pointer bg-coffee-primary text-white";
+        } else {
+          b.className =
+            "px-6 py-2 rounded-full transition-colors cursor-pointer bg-gray-100 text-gray-700 hover:bg-coffee-primary";
+        }
+      });
+
       applyFilters();
     });
   });
