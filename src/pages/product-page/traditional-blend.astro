@@ -98,6 +98,8 @@ import card1 from "../../../public/images/store/card1.png";
 </Layout>
 
 <script>
+  import { addToCart } from "../../stores/cart.js";
+
   const minusBtn = document.querySelector(".minus-btn");
   const plusBtn = document.querySelector(".plus-btn");
   const countSpan = document.querySelector(".count");
@@ -120,15 +122,36 @@ import card1 from "../../../public/images/store/card1.png";
     }
   });
 
-  // Update Snipcart quantity when count changes
-  function updateSnipcartQuantity() {
-    const snipcartBtn = document.querySelector(".snipcart-add-item");
-    if (snipcartBtn) {
-      snipcartBtn.setAttribute("data-item-quantity", count.toString());
-    }
-  }
+  // Handle add to cart with Nanostores
+  const addToCartBtn = document.querySelector(".snipcart-add-item");
 
-  // Update quantity on both buttons
-  minusBtn?.addEventListener("click", updateSnipcartQuantity);
-  plusBtn?.addEventListener("click", updateSnipcartQuantity);
+  addToCartBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const item = {
+      id: addToCartBtn.dataset.itemId,
+      name: addToCartBtn.dataset.itemName,
+      price: parseFloat(addToCartBtn.dataset.itemPrice),
+      description: addToCartBtn.dataset.itemDescription,
+      image: addToCartBtn.dataset.itemImage,
+      url: addToCartBtn.dataset.itemUrl,
+    };
+
+    // Add the item to cart with the selected quantity
+    for (let i = 0; i < count; i++) {
+      addToCart(item);
+    }
+
+    // Show success feedback
+    const originalText = addToCartBtn.textContent;
+    addToCartBtn.textContent = "Added to Cart!";
+    addToCartBtn.classList.add("bg-green-600");
+    addToCartBtn.classList.remove("bg-[#E0A341]");
+
+    setTimeout(() => {
+      addToCartBtn.textContent = originalText;
+      addToCartBtn.classList.remove("bg-green-600");
+      addToCartBtn.classList.add("bg-[#E0A341]");
+    }, 2000);
+  });
 </script>

@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@nanostores/persistent": "^1.1.0",
+    "@nanostores/solid": "^1.1.1",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
     "decap-cms-app": "^3.8.4",
-    "gsap": "^3.13.0",
     "nanostores": "^1.0.1",
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13"

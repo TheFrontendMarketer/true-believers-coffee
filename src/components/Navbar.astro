@@ -17,7 +17,7 @@ import logo from "../assets/tbc-logo-250x250.png";
             alt="Shopping cart"
             class="w-8 h-8 cursor-pointer"
           />
-          <span class="snipcart-items-count cart-items cart-items__desktop"
+          <span class="nanostores-cart-count cart-items cart-items__desktop"
             >0</span
           >
         </button>
@@ -97,7 +97,7 @@ import logo from "../assets/tbc-logo-250x250.png";
             alt="Shopping cart"
             class="w-8 h-8 cursor-pointer"
           />
-          <span class="snipcart-items-count cart-items cart-items__desktop"
+          <span class="nanostores-cart-count cart-items cart-items__desktop"
             >0</span
           >
         </button>
@@ -167,6 +167,47 @@ import logo from "../assets/tbc-logo-250x250.png";
 </nav>
 
 <script>
+  import {
+    cart,
+    getCartCount,
+    transferToSnipcart,
+    forceClearCart,
+  } from "../stores/cart.js";
+
+  // Update cart count display
+  function updateCartDisplay() {
+    const count = getCartCount();
+    const cartElements = document.querySelectorAll(".nanostores-cart-count");
+    cartElements.forEach((el) => {
+      el.textContent = count.toString();
+      (el as HTMLElement).style.display = count > 0 ? "inline" : "none";
+    });
+  }
+
+  // Subscribe to cart changes
+  cart.subscribe(updateCartDisplay);
+
+  // Initial display
+  updateCartDisplay();
+
+  // Debug function - call window.clearCartDebug() in browser console to clear cart
+  (window as any).clearCartDebug = () => {
+    forceClearCart();
+    updateCartDisplay();
+    console.log("Cart cleared!");
+  };
+
+  // Handle checkout - prevent default Snipcart behavior and use our transfer function
+  document.addEventListener("DOMContentLoaded", () => {
+    const checkoutBtns = document.querySelectorAll(".snipcart-checkout");
+    checkoutBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        transferToSnipcart();
+      });
+    });
+  });
+
   const btn = document.querySelector(".mobile-menu-button");
   const menu = document.querySelector(".mobile-menu");
   const hamburgerIcon = document.querySelector(".hamburger-icon");
@@ -179,7 +220,7 @@ import logo from "../assets/tbc-logo-250x250.png";
       if (isHidden) {
         // Show menu
         menu.classList.remove("hidden");
-        menu.offsetHeight; // Force reflow
+        (menu as HTMLElement).offsetHeight; // Force reflow
         menu.classList.remove("scale-95", "opacity-0");
         menu.classList.add("scale-100", "opacity-100");
       } else {

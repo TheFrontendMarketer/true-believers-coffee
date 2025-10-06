@@ -20,9 +20,6 @@ const {
     <!-- social sharing -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
-    ></script>
   </head>
   <body>
     <Navbar />
@@ -54,13 +51,22 @@ const {
     window.SnipcartSettings = {
       publicApiKey:
         "OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2",
-      loadStrategy: "on-page-load",
+      loadStrategy: "immediate",
       currency: "USD",
       version: "3.7.1",
       modalStyle: "side",
       allowedDomains: allowedDomains,
-      testMode: true, // Enable test mode
+      testMode: true,
     };
+  </script>
+
+  <script>
+    // Simple cart persistence - no complex API calls
+    document.addEventListener("DOMContentLoaded", function () {
+      // Just let Snipcart handle its own persistence
+      // No manual intervention needed
+      console.log("Snipcart should handle cart persistence automatically");
+    });
   </script>
 
   <script src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js" defer
