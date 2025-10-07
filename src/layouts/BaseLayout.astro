@@ -6,9 +6,11 @@ const {
   title = "Default Site Title",
   description = "Default site description",
 } = Astro.props;
+
+// Get API key from environment variables
+const snipcartApiKey = import.meta.env.SNIPCART_API_KEY;
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,14 +29,9 @@ const {
     <Footer />
 
     <!-- Snipcart container -->
-    <div
-      id="snipcart"
-      data-api-key="OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2"
-      hidden
-    >
-    </div>
+    <div id="snipcart" data-api-key={snipcartApiKey} hidden></div>
   </body>
-  <script>
+  <script define:vars={{ snipcartApiKey }}>
     // Detect environment and set appropriate domains
     const isLocalhost =
       window.location.hostname === "localhost" ||
@@ -49,8 +46,7 @@ const {
     }
 
     window.SnipcartSettings = {
-      publicApiKey:
-        "OTJlNzVkZjAtMmZjYS00MGQ1LWI1ZDEtZThhYmMxY2FmNGZiNjM4OTQ5NDY4NTUzODYxMjM2",
+      publicApiKey: snipcartApiKey,
       loadStrategy: "immediate",
       currency: "USD",
       version: "3.7.1",
